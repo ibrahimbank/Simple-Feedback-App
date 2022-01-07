@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 import "./App.css";
 import FeedBackForm from "./components/FeedBackForm";
@@ -16,7 +17,8 @@ function App() {
   };
 
   const addFeedback = (newFeedback) => {
-    console.log(newFeedback);
+    newFeedback.id = uuidv4();
+    setFeedback([newFeedback, ...feedback]);
   };
 
   return (
