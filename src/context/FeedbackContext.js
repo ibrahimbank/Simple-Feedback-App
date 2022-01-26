@@ -50,7 +50,7 @@ export const FeedBackProvider = ({ children }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newFeedback),
+      body: JSON.parse(JSON.stringify(newFeedback)),
     });
 
     const data = await response.json();
@@ -65,7 +65,7 @@ export const FeedBackProvider = ({ children }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updItem),
+      body: JSON.parse(JSON.stringify(updItem)),
     });
 
     const data = await response.json();
